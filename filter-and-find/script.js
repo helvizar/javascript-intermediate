@@ -1,6 +1,6 @@
 // Filter - returns a new array, can manipulate the size of new array (unlike map), return based on condition
 
-// Find - returns single instance (object), return first match, if no match - undefined
+// Find - returns single instance, return first match, if no match - undefined
 
 const people = [
   {name: "bob", age: 20, position: "intern"},
@@ -8,6 +8,8 @@ const people = [
   {name: "susy", age: 30, position: "designer"},
   {name: "anna", age: 35, position: "the boss"},
 ];
+
+const fruits = ["apple", "orange", "melon"];
 
 // filter
 const youngPeople = people.filter((person) => {
@@ -26,10 +28,24 @@ const seniorDevelopers = people.filter((item) => item.position === "seniorDevelo
 console.log(seniorDevelopers);
 
 // find
+const peter = people.find((person) => person.name === "peter");
+console.log(peter);
 
+const melon = fruits.find((fruit) => fruit === "melon");
+console.log(melon);
 
 // no match
-
+const oldPerson = people.find((person) => person.age > 35);
+console.log(oldPerson);
 
 // multiple matches - first match
+const randomPerson = people.find((person) => person.age < 35);
+console.log(randomPerson);
 
+// special case
+const anna = people.filter((person) => person.name === "anna");
+console.log(anna); // filter always return array
+
+// access property
+console.log(peter.position);
+console.log(anna[0].position);
