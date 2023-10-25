@@ -16,7 +16,7 @@ const totalDaily = staff.reduce((total, person) => {
   console.log(person.salary);
   
   total += person.salary;
-  return total
+  return total; // always return the first parameter in callback function reduce
 
 }, 0);
 
